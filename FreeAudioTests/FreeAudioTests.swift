@@ -31,7 +31,7 @@ class FreeAudioTests: XCTestCase {
         let fileManager = FileManager.default
         let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
         let filePath = documentsURL.appendingPathComponent(filename)
-        writeFile(with: filename) // test code only one line
+        writeAudioFile(with: filename) // test code only one line
         let ret = fileManager.fileExists(atPath: filePath.path)
         XCTAssertTrue(ret)
     }
@@ -40,8 +40,8 @@ class FreeAudioTests: XCTestCase {
         let fileManager = FileManager.default
         let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
         let filePath = documentsURL.appendingPathComponent(filename)
-        writeFile(with: filename)
-        deleteFile(with: filename)
+        writeAudioFile(with: filename)
+        deleteAudioFile(with: filename)
         let ret = fileManager.fileExists(atPath: filePath.path)
         XCTAssertFalse(ret)
     }

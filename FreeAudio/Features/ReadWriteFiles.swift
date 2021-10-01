@@ -7,11 +7,11 @@
 
 import Foundation
 
-func readFile() {
+func readAudioFile() {
     
 }
 
-func writeFile(with name:String) {
+func writeAudioFile(with name:String) {
     let fileManager = FileManager.default
     let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
     let filePath = documentsURL.appendingPathComponent(name)
@@ -26,7 +26,7 @@ func writeFile(with name:String) {
     }
 }
 
-func deleteFile(with name:String) {
+func deleteAudioFile(with name:String) {
     let fileManager = FileManager.default
     let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
     let filePath = documentsURL.appendingPathComponent(name)
