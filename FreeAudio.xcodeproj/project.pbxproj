@@ -16,6 +16,7 @@
 		39007DC9270605840064D0AB /* FreeAudioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39007DC8270605840064D0AB /* FreeAudioUITests.swift */; };
 		39007DCB270605840064D0AB /* FreeAudioUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39007DCA270605840064D0AB /* FreeAudioUITestsLaunchTests.swift */; };
 		3912314C2707042100680DD2 /* ReadWriteFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3912314B2707042100680DD2 /* ReadWriteFiles.swift */; };
+		3989F8FE27072B50008EEEFB /* ReadMyIphoneDirectorysInfos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3989F8FD27072B50008EEEFB /* ReadMyIphoneDirectorysInfos.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		39007DC8270605840064D0AB /* FreeAudioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeAudioUITests.swift; sourceTree = "<group>"; };
 		39007DCA270605840064D0AB /* FreeAudioUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeAudioUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3912314B2707042100680DD2 /* ReadWriteFiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadWriteFiles.swift; sourceTree = "<group>"; };
+		3989F8FD27072B50008EEEFB /* ReadMyIphoneDirectorysInfos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadMyIphoneDirectorysInfos.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				3912314B2707042100680DD2 /* ReadWriteFiles.swift */,
+				3989F8FD27072B50008EEEFB /* ReadMyIphoneDirectorysInfos.swift */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3989F8FE27072B50008EEEFB /* ReadMyIphoneDirectorysInfos.swift in Sources */,
 				39007DAC270605830064D0AB /* ViewController.swift in Sources */,
 				3912314C2707042100680DD2 /* ReadWriteFiles.swift in Sources */,
 				39007DA8270605830064D0AB /* AppDelegate.swift in Sources */,
