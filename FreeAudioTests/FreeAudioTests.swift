@@ -18,10 +18,6 @@ class FreeAudioTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
@@ -34,8 +30,7 @@ class FreeAudioTests: XCTestCase {
         let filename = "testfile.txt"
         let fileManager = FileManager.default
         let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
-        let directoryURL = documentsURL.appendingPathComponent("FreeAudio")
-        let filePath = directoryURL.appendingPathComponent(filename)
+        let filePath = documentsURL.appendingPathComponent(filename)
         writeFile(with: filename) // test code only one line
         let ret = fileManager.fileExists(atPath: filePath.path)
         XCTAssertTrue(ret)
@@ -44,8 +39,7 @@ class FreeAudioTests: XCTestCase {
         let filename = "testfile.txt"
         let fileManager = FileManager.default
         let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
-        let directoryURL = documentsURL.appendingPathComponent("FreeAudio")
-        let filePath = directoryURL.appendingPathComponent(filename)
+        let filePath = documentsURL.appendingPathComponent(filename)
         writeFile(with: filename)
         deleteFile(with: filename)
         let ret = fileManager.fileExists(atPath: filePath.path)
@@ -53,5 +47,10 @@ class FreeAudioTests: XCTestCase {
     }
     func testFileRead() throws {
         
+    }
+    func testMyiphoneDirRead() throws {
+        let minNumberOfTestFiles = 3
+        let arr = readMyIphoneDirectorysInfos()
+        XCTAssert(arr.count >= minNumberOfTestFiles, "what the")
     }
 }
