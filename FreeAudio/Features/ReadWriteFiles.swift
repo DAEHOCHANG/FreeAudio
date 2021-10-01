@@ -14,19 +14,9 @@ func readFile() {
 func writeFile(with name:String) {
     let fileManager = FileManager.default
     let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
-    let directoryURL = documentsURL.appendingPathComponent("FreeAudio")
-    let filePath = directoryURL.appendingPathComponent(name)
+    let filePath = documentsURL.appendingPathComponent(name)
     let text = "Hello Test Folder"
     
-    // if directory it not exists
-    if fileManager.fileExists(atPath: directoryURL.path) == false {
-        do {
-            try fileManager.createDirectory(at: directoryURL, withIntermediateDirectories: false, attributes: nil)
-        } catch {
-            print("make directory Error erorr :\(error)")
-            return
-        }
-    }
     
     //fileWrite
     do {
@@ -39,11 +29,7 @@ func writeFile(with name:String) {
 func deleteFile(with name:String) {
     let fileManager = FileManager.default
     let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
-    let directoryURL = documentsURL.appendingPathComponent("FreeAudio")
-    let filePath = directoryURL.appendingPathComponent(name)
-    if fileManager.fileExists(atPath: directoryURL.path) == false {
-        return
-    }
+    let filePath = documentsURL.appendingPathComponent(name)
     do {
         try fileManager.removeItem(atPath: filePath.path)
     } catch {
