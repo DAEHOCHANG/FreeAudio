@@ -26,7 +26,6 @@ class FreeAudioTests: XCTestCase {
         }
     }
     func testFileWrite() throws {
-        
         let filename = "testfile.txt"
         let fileManager = FileManager.default
         let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -35,6 +34,7 @@ class FreeAudioTests: XCTestCase {
         let ret = fileManager.fileExists(atPath: filePath.path)
         XCTAssertTrue(ret)
     }
+    
     func testFileDelete() throws {
         let filename = "testfile.txt"
         let fileManager = FileManager.default
@@ -51,6 +51,7 @@ class FreeAudioTests: XCTestCase {
     func testMyiphoneDirRead() throws {
         let minNumberOfTestFiles = 3
         let arr = readMyIphoneDirectorysInfos()
+        print(arr)
         XCTAssert(arr.count >= minNumberOfTestFiles, "what the")
     }
 }

@@ -7,8 +7,15 @@
 
 import Foundation
 
-func readAudioFile() {
-    
+func readAudioFile(with name:String) -> URL? {
+    let fileManager = FileManager.default
+    let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
+    let filePath = documentsURL.appendingPathComponent(name)
+    if fileManager.fileExists(atPath: filePath.path) == false {
+        return nil
+    } else {
+        return filePath
+    }
 }
 
 func writeAudioFile(with name:String) {
@@ -16,7 +23,6 @@ func writeAudioFile(with name:String) {
     let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
     let filePath = documentsURL.appendingPathComponent(name)
     let text = "Hello Test Folder"
-    
     
     //fileWrite
     do {
