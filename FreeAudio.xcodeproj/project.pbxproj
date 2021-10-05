@@ -19,6 +19,7 @@
 		396163062709AF6600845785 /* testStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 396163052709AF6600845785 /* testStoryBoard.storyboard */; };
 		396163082709AF8200845785 /* testAudioMixViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396163072709AF8200845785 /* testAudioMixViewController.swift */; };
 		3989F8FE27072B50008EEEFB /* ReadMyIphoneDirectorysInfos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3989F8FD27072B50008EEEFB /* ReadMyIphoneDirectorysInfos.swift */; };
+		39A41432270C581200AFD345 /* TrimMergeAudioFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A41431270C581200AFD345 /* TrimMergeAudioFile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		396163052709AF6600845785 /* testStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = testStoryBoard.storyboard; sourceTree = "<group>"; };
 		396163072709AF8200845785 /* testAudioMixViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testAudioMixViewController.swift; sourceTree = "<group>"; };
 		3989F8FD27072B50008EEEFB /* ReadMyIphoneDirectorysInfos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadMyIphoneDirectorysInfos.swift; sourceTree = "<group>"; };
+		39A41431270C581200AFD345 /* TrimMergeAudioFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrimMergeAudioFile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +166,7 @@
 			children = (
 				3912314B2707042100680DD2 /* ReadWriteDeleteFiles.swift */,
 				3989F8FD27072B50008EEEFB /* ReadMyIphoneDirectorysInfos.swift */,
+				39A41431270C581200AFD345 /* TrimMergeAudioFile.swift */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 				3912314C2707042100680DD2 /* ReadWriteDeleteFiles.swift in Sources */,
 				39007DA8270605830064D0AB /* AppDelegate.swift in Sources */,
 				39007DAA270605830064D0AB /* SceneDelegate.swift in Sources */,
+				39A41432270C581200AFD345 /* TrimMergeAudioFile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

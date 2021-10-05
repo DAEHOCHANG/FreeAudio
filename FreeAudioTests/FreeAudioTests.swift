@@ -46,7 +46,11 @@ class FreeAudioTests: XCTestCase {
         XCTAssertFalse(ret)
     }
     func testFileRead() throws {
-        
+        let arr = readMyIphoneDirectorysInfos()
+        for a in arr {
+            let ret = readAudioFile(with: a)
+            XCTAssertNotNil(ret)
+        }
     }
     func testMyiphoneDirRead() throws {
         let minNumberOfTestFiles = 3
