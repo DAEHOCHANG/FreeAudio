@@ -6,15 +6,16 @@
 //
 
 import Foundation
+import AVFoundation
 
-func readAudioFile(with name:String) -> URL? {
+func readAudioFile(with name:String) -> AVAsset? {
     let fileManager = FileManager.default
     let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
     let filePath = documentsURL.appendingPathComponent(name)
     if fileManager.fileExists(atPath: filePath.path) == false {
         return nil
     } else {
-        return filePath
+        return AVAsset(url: filePath)
     }
 }
 
