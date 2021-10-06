@@ -25,15 +25,19 @@ class testAudioMixViewController: UIViewController {
     func tmp_func() {
         if getList.isEmpty == true { return }
         let audioAsset = readAudioFile(with: getList[0])!
-        
+        print(getList[0])
         
         let item = AVPlayerItem(asset: audioAsset)
         player.replaceCurrentItem(with: item)
         player.play()
-        
+        trimAudioFile(file: audioAsset, start: 0, end: 30, completionHandler: {})
     }
     @IBAction func tgewa(_ sender: UIButton) {
-        let jumpTime = CMTimeMakeWithSeconds(0.0, preferredTimescale: Int32(NSEC_PER_SEC))
-        player.seek(to: jumpTime)
+        let fileManager = FileManager()
+        let url = URL(string: fileManager.temporaryDirectory.path + "/tmp.wav")!
+        let ret = fileManager.fileExists(atPath: fileManager.temporaryDirectory.path + "/tmp.wav")
+        print(ret)
+        let tmpAudio = AVAsset(url: url)
+        print(tmpAudio.duration)
     }
 }
