@@ -30,14 +30,11 @@ class testAudioMixViewController: UIViewController {
         let item = AVPlayerItem(asset: audioAsset)
         player.replaceCurrentItem(with: item)
         player.play()
-        trimAudioFile(file: audioAsset, start: 0, end: 30, completionHandler: {})
+        guard let asset1 = readAudioFile(with: getList[0]) else {return;}
+        guard let asset2 = readAudioFile(with: getList[0]) else {return;}
+        MergeAudioFile(originalAsset: asset1, will: asset2, start: 3, completionHandler:{})
     }
     @IBAction func tgewa(_ sender: UIButton) {
-        let fileManager = FileManager()
-        let url = URL(string: fileManager.temporaryDirectory.path + "/tmp.wav")!
-        let ret = fileManager.fileExists(atPath: fileManager.temporaryDirectory.path + "/tmp.wav")
-        print(ret)
-        let tmpAudio = AVAsset(url: url)
-        print(tmpAudio.duration)
+        
     }
 }

@@ -60,15 +60,12 @@ class FreeAudioTests: XCTestCase {
         XCTAssert(arr.count >= minNumberOfTestFiles, "what the")
     }
     func testSplitAudioFile() throws {
+        
+    }
+    func testMergeAudioFile() throws {
         let arr = readMyIphoneDirectorysInfos()
-        guard let asset = readAudioFile(with: arr[0]) else {XCTAssert(true, "뷁");return;}
-        let dur = Double(asset.duration.value) / Double(asset.duration.timescale)
-        trimAudioFile(file: asset, start: 0.0, end: dur/2, completionHandler: { [weak self] in
-            let fileManager = FileManager()
-            let url = URL(string: fileManager.temporaryDirectory.path + "/tmp.m4a")!
-            let ret = fileManager.fileExists(atPath: fileManager.temporaryDirectory.path + "/tmp.m4a")
-            XCTAssert(ret, "\(ret)")
-            let tmpAudio = AVAsset(url: url)
-        })
+        guard let asset1 = readAudioFile(with: arr[0]) else {XCTAssert(true, "뷁");return;}
+        guard let asset2 = readAudioFile(with: arr[0]) else {XCTAssert(true, "뷁");return;}
+        MergeAudioFile(originalAsset: asset1, will: asset2, start: 1, completionHandler:{})
     }
 }

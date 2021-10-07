@@ -7,8 +7,13 @@
 
 import Foundation
 import AVFoundation
+/*
+ 다듬는것과 합치는것은 tmp directory에 저장하는 것이 맞음
+ 그럼이제 tmp 에 저장된 파일을 나의 iphone으로 저장하는 함수도 필요함
+ */
 
-
+//저장하는것은 좋은데 파일명 작명도 중요함.
+//또한 redo undo 가 실행 될 것임으로 stack의 형태로 저장될 수 있게끔 하면 좋을듯
 func trimAudioFile(file:AVAsset,start:Double,end:Double, completionHandler:@escaping () -> Void)  {
     guard let exporter = AVAssetExportSession(asset: file, presetName: AVAssetExportPresetAppleM4A) else {return}
     let startCMTime = CMTimeMakeWithSeconds(start, preferredTimescale: Int32(NSEC_PER_SEC))
@@ -16,7 +21,6 @@ func trimAudioFile(file:AVAsset,start:Double,end:Double, completionHandler:@esca
  
     exporter.outputFileType =  AVFileType.m4a
     exporter.timeRange = CMTimeRangeFromTimeToTime(start: startCMTime, end: endCMTime)
-
     let documentsURL = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
     let filePath = documentsURL.appendingPathComponent("test.m4a")
     exporter.outputURL = filePath
@@ -38,6 +42,41 @@ func trimAudioFile(file:AVAsset,start:Double,end:Double, completionHandler:@esca
  0~5는 기존 오디오와 곂처서 나오게 될 것이다.
  다만 end 가 originalFile의 시작지점(0.0)보다 작다면 end는 0.0으로 고정이 될 것이다.
  */
-func MergeAudioFile(originalFile:AVAsset,will mergedFile:AVAsset, start:Double,end:Double) {
-    return 
+func MergeAudioFile(originalAsset:AVAsset,will mergedAsset:AVAsset, start:Double,completionHandler:@escaping () -> Void) {
+    let mixComposition = AVMutableComposition()
+    let startCMTime = CMTimeMakeWithSeconds(start, preferredTimescale: Int32(NSEC_PER_SEC))
+    
+    guard let originalTrack = mixComposition.addMutableTrack(withMediaType: .audio, preferredTrackID: kCMPersistentTrackID_Invalid) else {print("Error making Original Track");return}
+    guard let mergedlTrack = mixComposition.addMutableTrack(withMediaType: .audio, preferredTrackID: kCMPersistentTrackID_Invalid) else {print("Error making Merged Track");return}
+    do {
+        try originalTrack.insertTimeRange(
+            CMTimeRangeMake(start: .zero, duration: originalAsset.duration),
+            of: originalAsset.tracks(withMediaType: .audio)[0],
+            at: .zero)
+        
+        try mergedlTrack.insertTimeRange(
+            CMTimeRangeMake(start: .zero, duration: mergedAsset.duration),
+            of: mergedAsset.tracks(withMediaType: .audio)[0],
+            at: startCMTime)
+    } catch {
+        print("Error inserting time to original track")
+        return
+    }
+    
+    
+    guard let exporter = AVAssetExportSession(asset: mixComposition, presetName: AVAssetExportPresetAppleM4A) else {return}
+    exporter.outputFileType =  AVFileType.m4a
+    exporter.timeRange = CMTimeRangeFromTimeToTime(start: .zero, end: mixComposition.duration)
+    let documentsURL = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+    let filePath = documentsURL.appendingPathComponent("testt.m4a")
+    exporter.outputURL = filePath
+    exporter.exportAsynchronously {
+        completionHandler()
+        switch exporter.status {
+        case AVAssetExportSession.Status.failed:
+            print("Export failed.")
+        default:
+            print("Export complete.")
+        }
+    }
 }
