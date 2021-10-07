@@ -7,6 +7,7 @@
 
 import XCTest
 @testable import FreeAudio
+import AVFoundation
 
 class FreeAudioTests: XCTestCase {
 
@@ -46,12 +47,25 @@ class FreeAudioTests: XCTestCase {
         XCTAssertFalse(ret)
     }
     func testFileRead() throws {
-        
+        let arr = readMyIphoneDirectorysInfos()
+        for a in arr {
+            let ret = readAudioFile(with: a)
+            XCTAssertNotNil(ret)
+        }
     }
     func testMyiphoneDirRead() throws {
         let minNumberOfTestFiles = 3
         let arr = readMyIphoneDirectorysInfos()
         print(arr)
         XCTAssert(arr.count >= minNumberOfTestFiles, "what the")
+    }
+    func testSplitAudioFile() throws {
+        
+    }
+    func testMergeAudioFile() throws {
+        let arr = readMyIphoneDirectorysInfos()
+        guard let asset1 = readAudioFile(with: arr[0]) else {XCTAssert(true, "뷁");return;}
+        guard let asset2 = readAudioFile(with: arr[0]) else {XCTAssert(true, "뷁");return;}
+        MergeAudioFile(originalAsset: asset1, will: asset2, start: 1, completionHandler:{})
     }
 }

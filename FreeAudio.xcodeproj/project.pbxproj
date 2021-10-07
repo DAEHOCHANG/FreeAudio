@@ -15,10 +15,11 @@
 		39007DBF270605840064D0AB /* FreeAudioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39007DBE270605840064D0AB /* FreeAudioTests.swift */; };
 		39007DC9270605840064D0AB /* FreeAudioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39007DC8270605840064D0AB /* FreeAudioUITests.swift */; };
 		39007DCB270605840064D0AB /* FreeAudioUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39007DCA270605840064D0AB /* FreeAudioUITestsLaunchTests.swift */; };
-		3912314C2707042100680DD2 /* ReadWriteFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3912314B2707042100680DD2 /* ReadWriteFiles.swift */; };
+		3912314C2707042100680DD2 /* ReadWriteDeleteFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3912314B2707042100680DD2 /* ReadWriteDeleteFiles.swift */; };
 		396163062709AF6600845785 /* testStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 396163052709AF6600845785 /* testStoryBoard.storyboard */; };
 		396163082709AF8200845785 /* testAudioMixViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396163072709AF8200845785 /* testAudioMixViewController.swift */; };
 		3989F8FE27072B50008EEEFB /* ReadMyIphoneDirectorysInfos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3989F8FD27072B50008EEEFB /* ReadMyIphoneDirectorysInfos.swift */; };
+		39A41432270C581200AFD345 /* TrimMergeAudioFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A41431270C581200AFD345 /* TrimMergeAudioFile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,10 +52,11 @@
 		39007DC4270605840064D0AB /* FreeAudioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FreeAudioUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		39007DC8270605840064D0AB /* FreeAudioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeAudioUITests.swift; sourceTree = "<group>"; };
 		39007DCA270605840064D0AB /* FreeAudioUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeAudioUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		3912314B2707042100680DD2 /* ReadWriteFiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadWriteFiles.swift; sourceTree = "<group>"; };
+		3912314B2707042100680DD2 /* ReadWriteDeleteFiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadWriteDeleteFiles.swift; sourceTree = "<group>"; };
 		396163052709AF6600845785 /* testStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = testStoryBoard.storyboard; sourceTree = "<group>"; };
 		396163072709AF8200845785 /* testAudioMixViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testAudioMixViewController.swift; sourceTree = "<group>"; };
 		3989F8FD27072B50008EEEFB /* ReadMyIphoneDirectorysInfos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadMyIphoneDirectorysInfos.swift; sourceTree = "<group>"; };
+		39A41431270C581200AFD345 /* TrimMergeAudioFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrimMergeAudioFile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,8 +164,9 @@
 		3912314A270703D800680DD2 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				3912314B2707042100680DD2 /* ReadWriteFiles.swift */,
+				3912314B2707042100680DD2 /* ReadWriteDeleteFiles.swift */,
 				3989F8FD27072B50008EEEFB /* ReadMyIphoneDirectorysInfos.swift */,
+				39A41431270C581200AFD345 /* TrimMergeAudioFile.swift */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -302,9 +305,10 @@
 				3989F8FE27072B50008EEEFB /* ReadMyIphoneDirectorysInfos.swift in Sources */,
 				39007DAC270605830064D0AB /* ViewController.swift in Sources */,
 				396163082709AF8200845785 /* testAudioMixViewController.swift in Sources */,
-				3912314C2707042100680DD2 /* ReadWriteFiles.swift in Sources */,
+				3912314C2707042100680DD2 /* ReadWriteDeleteFiles.swift in Sources */,
 				39007DA8270605830064D0AB /* AppDelegate.swift in Sources */,
 				39007DAA270605830064D0AB /* SceneDelegate.swift in Sources */,
+				39A41432270C581200AFD345 /* TrimMergeAudioFile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,7 +407,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -458,7 +462,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -483,6 +487,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -511,6 +516,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -529,6 +535,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5HHBUD9SB9;
@@ -554,6 +561,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5HHBUD9SB9;
