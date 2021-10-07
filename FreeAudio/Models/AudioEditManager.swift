@@ -129,12 +129,13 @@ struct AudioEditingFrame {
 
 extension AudioEditingFrame {
     mutating func command(of working :AudioEditCommand) {
-        if case .changeTrimTimeRange = working {
-            guard let lastWork = commands.last else {return}
+        let commandType = working.editType
+        if case .changeTrimTimeRange = commandType {
+            guard let lastWork = commands.last?.editType else {return}
             if !(lastWork == .trim || lastWork == .changeTrimTimeRange) {return}
         }
-        if case .changeMergeTimeRange = working {
-            guard let lastWork = commands.last else {return}
+        if case .changeMergeTimeRange = commandType {
+            guard let lastWork = commands.last?.editType else {return}
             if !(lastWork == .merge || lastWork == .changeMergeTimeRange) {return}
         }
         _top += 1
@@ -147,11 +148,25 @@ extension AudioEditingFrame {
         _top = at
     }
 }
+
+struct AudioEditCommand {
+    var editType: AudioEditType
+    var timeRange: TimeRange?
+    init? (editType:AudioEditType,_ timeRange:TimeRange? = nil) {
+        if editType == .trim || editType == .merge {
+            if timeRange != nil {return nil}
+        } else {
+            if timeRange == nil {return nil}
+        }
+        self.editType = editType
+        self.timeRange = timeRange
+    }
+}
 //다듬는 영역 수정 명령어
 //합치는 영역 수정 명령어
 //다듬기 클릭하는 명령어
 //합치기 클릭하는 명령어
-enum AudioEditCommand {
+enum AudioEditType {
     case trim
     case merge
     case changeTrimTimeRange
