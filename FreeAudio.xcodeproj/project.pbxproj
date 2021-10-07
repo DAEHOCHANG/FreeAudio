@@ -19,6 +19,7 @@
 		3989F8FE27072B50008EEEFB /* ReadMyIphoneDirectorysInfos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3989F8FD27072B50008EEEFB /* ReadMyIphoneDirectorysInfos.swift */; };
 		39A41432270C581200AFD345 /* TrimMergeAudioFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A41431270C581200AFD345 /* TrimMergeAudioFile.swift */; };
 		39BA8355270ECDB200627E3A /* AudioEditManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BA8354270ECDB200627E3A /* AudioEditManager.swift */; };
+		39BA8357270EFADE00627E3A /* FreeAudioModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BA8356270EFADE00627E3A /* FreeAudioModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		3989F8FD27072B50008EEEFB /* ReadMyIphoneDirectorysInfos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadMyIphoneDirectorysInfos.swift; sourceTree = "<group>"; };
 		39A41431270C581200AFD345 /* TrimMergeAudioFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrimMergeAudioFile.swift; sourceTree = "<group>"; };
 		39BA8354270ECDB200627E3A /* AudioEditManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioEditManager.swift; sourceTree = "<group>"; };
+		39BA8356270EFADE00627E3A /* FreeAudioModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeAudioModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				39007DBE270605840064D0AB /* FreeAudioTests.swift */,
+				39BA8356270EFADE00627E3A /* FreeAudioModelTests.swift */,
 			);
 			path = FreeAudioTests;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39BA8357270EFADE00627E3A /* FreeAudioModelTests.swift in Sources */,
 				39007DBF270605840064D0AB /* FreeAudioTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

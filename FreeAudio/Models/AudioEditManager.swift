@@ -38,15 +38,15 @@ import AVFoundation
  */
 class AudioEditManager {
     private var frameTop: Int = 0
-    private var offset: Int = 0
-    private var frameNumber: Int = 0
+    private var offset: Int = -1
+    private var frameNumber: Int = -1
     private var frames: [AudioEditingFrame] = []
     func redo() {
         let curFrameTop = frames[frameNumber].top
         if curFrameTop == offset + 1 {
             if frameNumber + 1 < frameTop {
                 frameNumber += 1
-                offset = 0
+                offset = -1
             }
         } else {
             offset += 1
@@ -54,10 +54,11 @@ class AudioEditManager {
     }
     func undo() {
         if offset - 1 <= 0 {
-            if frameNumber > 0 {
+            if frameNumber >= 0 {
                 frameNumber -= 1
-                offset = frames[frameNumber].top - 1
-            }
+                if frameNumber >= 0 { offset = frames[frameNumber].top - 1 }
+                else { offset = -1 }
+            } 
         } else {
             offset -= 1
         }
@@ -66,26 +67,46 @@ class AudioEditManager {
         //현재 프레임의 오프셋에서 새로운 동작이 발동했음으로
         //현재 프레임보다 높은 값들을 싹다 지우고, frameTop갱신
         //현재 프레임의 top도 변경해주어야 함 현재 오프셋 + 1로
+        
         if frameNumber+1 < frameTop {
             frames.removeSubrange(frameNumber+1..<frameTop)
             frameTop = frameNumber + 1
         }
-        frames[frameNumber].clearToLast(at: offset)
+        if frameNumber > 0 && offset+1 >= 0 {
+            frames[frameNumber].clearToLast(at: offset+1)
+        }
     }
     func command(of working :AudioEditCommand) {
+        //이전 명령어 확인해야함
+        //다듬기 시간변경 은 이전에 다듬기 시간 변경 혹은 다듬기 명령어야함
+        //같은 이유로 merge 시간변경도 이전게 merge시간 변경 혹은 merge가 나와야함
+        //merge 와 trim 은 갑자기 나와도 상관이 없음
+        
+        if frameNumber < 0 {return}
         clearCurToLast()
         frames[frameNumber].command(of: working)
+        offset = frames[frameNumber].top - 1
     }
     func appendNewFrame(audioFileName:String) {
         clearCurToLast()
         let newFrame = AudioEditingFrame(initialAudioFileName: audioFileName)
         frames.append(newFrame)
-        offset = 0
+        offset = -1
         frameTop += 1
         frameNumber += 1
     }
+    func getCurrentFrame() -> AudioEditingFrame? {
+        if frames.count <= 0 {return nil}
+        if frameNumber < 0 {return nil}
+        return self.frames[frameNumber]
+    }
 }
-
+extension AudioEditManager {
+    func debugOffset() -> Int { return offset }
+    func debugFrame() -> Int { return frameNumber }
+    func debugArr() -> [AudioEditingFrame] { return frames }
+    func debugFrameTop() -> Int { return frameTop }
+}
 
 
 /**
@@ -94,7 +115,7 @@ class AudioEditManager {
  현재 상태                                    : 다듬기 / 다른 오디오 추가 / 기본상태                    (enum)
  확대 기록                                    : 다듬기나 오디오를 추가 할 때 확대 할 수 있음        ([extensionRecord])
  */
-typealias timeRange = (start:Double, end: Double)
+typealias TimeRange = (start:Double, end: Double)
 struct AudioEditingFrame {
     private var _top:Int = 0
     var top:Int {return _top}
@@ -108,6 +129,14 @@ struct AudioEditingFrame {
 
 extension AudioEditingFrame {
     mutating func command(of working :AudioEditCommand) {
+        if case .changeTrimTimeRange = working {
+            guard let lastWork = commands.last else {return}
+            if !(lastWork == .trim || lastWork == .changeTrimTimeRange) {return}
+        }
+        if case .changeMergeTimeRange = working {
+            guard let lastWork = commands.last else {return}
+            if !(lastWork == .merge || lastWork == .changeMergeTimeRange) {return}
+        }
         _top += 1
         self.commands.append(working)
     }
@@ -125,7 +154,8 @@ extension AudioEditingFrame {
 enum AudioEditCommand {
     case trim
     case merge
-    case changeTrimTimeRange(timeRange)
-    case changeMergeTimeRange(timeRange)
+    case changeTrimTimeRange
+    case changeMergeTimeRange
+    case normal
 }
 
