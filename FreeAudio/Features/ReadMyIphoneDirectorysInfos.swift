@@ -7,6 +7,9 @@
 
 import Foundation
 
+/**
+ 나의 아이폰 디렉토리에 있는 파일들의 이름배열을 반환합니다.
+ */
 func readMyIphoneDirectorysInfos() -> [String] {
     let fileManager = FileManager.default
     let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!

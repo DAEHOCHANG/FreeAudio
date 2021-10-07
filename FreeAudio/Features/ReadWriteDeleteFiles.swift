@@ -8,6 +8,9 @@
 import Foundation
 import AVFoundation
 
+/**
+ 나의 아이폰 디렉토리에 name(파일 형식자 포함) 이름의 파일을 AVAsset으로 가져옵니다.
+ */
 func readAudioFile(with name:String) -> AVAsset? {
     let fileManager = FileManager.default
     let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -19,6 +22,11 @@ func readAudioFile(with name:String) -> AVAsset? {
     }
 }
 
+/**
+ [수정]
+ 나의 아이폰 디렉토리에 name(파일 형식자 포함) 이름의 파일을 저장합니다.
+ 다만 AVAsset 도 와야할것 같은데 수정이 필요함
+ */
 func writeAudioFile(with name:String) {
     let fileManager = FileManager.default
     let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -33,6 +41,10 @@ func writeAudioFile(with name:String) {
     }
 }
 
+/**
+ 오디오 파일 삭제
+ 나의 아이폰 디렉토리에 name(파일 형식자 포함) 이름의 파일을 삭제합니다.
+ */
 func deleteAudioFile(with name:String) {
     let fileManager = FileManager.default
     let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!

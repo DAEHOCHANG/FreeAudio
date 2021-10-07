@@ -16,8 +16,6 @@
 		39007DC9270605840064D0AB /* FreeAudioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39007DC8270605840064D0AB /* FreeAudioUITests.swift */; };
 		39007DCB270605840064D0AB /* FreeAudioUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39007DCA270605840064D0AB /* FreeAudioUITestsLaunchTests.swift */; };
 		3912314C2707042100680DD2 /* ReadWriteDeleteFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3912314B2707042100680DD2 /* ReadWriteDeleteFiles.swift */; };
-		396163062709AF6600845785 /* testStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 396163052709AF6600845785 /* testStoryBoard.storyboard */; };
-		396163082709AF8200845785 /* testAudioMixViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396163072709AF8200845785 /* testAudioMixViewController.swift */; };
 		3989F8FE27072B50008EEEFB /* ReadMyIphoneDirectorysInfos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3989F8FD27072B50008EEEFB /* ReadMyIphoneDirectorysInfos.swift */; };
 		39A41432270C581200AFD345 /* TrimMergeAudioFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A41431270C581200AFD345 /* TrimMergeAudioFile.swift */; };
 /* End PBXBuildFile section */
@@ -53,8 +51,6 @@
 		39007DC8270605840064D0AB /* FreeAudioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeAudioUITests.swift; sourceTree = "<group>"; };
 		39007DCA270605840064D0AB /* FreeAudioUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeAudioUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3912314B2707042100680DD2 /* ReadWriteDeleteFiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadWriteDeleteFiles.swift; sourceTree = "<group>"; };
-		396163052709AF6600845785 /* testStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = testStoryBoard.storyboard; sourceTree = "<group>"; };
-		396163072709AF8200845785 /* testAudioMixViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testAudioMixViewController.swift; sourceTree = "<group>"; };
 		3989F8FD27072B50008EEEFB /* ReadMyIphoneDirectorysInfos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadMyIphoneDirectorysInfos.swift; sourceTree = "<group>"; };
 		39A41431270C581200AFD345 /* TrimMergeAudioFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrimMergeAudioFile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -141,7 +137,6 @@
 		39007DD7270605A90064D0AB /* StoryBoards */ = {
 			isa = PBXGroup;
 			children = (
-				396163052709AF6600845785 /* testStoryBoard.storyboard */,
 			);
 			path = StoryBoards;
 			sourceTree = "<group>";
@@ -149,7 +144,6 @@
 		39007DD8270605BF0064D0AB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				396163072709AF8200845785 /* testAudioMixViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -275,7 +269,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				396163062709AF6600845785 /* testStoryBoard.storyboard in Resources */,
 				39007DB4270605840064D0AB /* LaunchScreen.storyboard in Resources */,
 				39007DB1270605840064D0AB /* Assets.xcassets in Resources */,
 			);
@@ -304,7 +297,6 @@
 			files = (
 				3989F8FE27072B50008EEEFB /* ReadMyIphoneDirectorysInfos.swift in Sources */,
 				39007DAC270605830064D0AB /* ViewController.swift in Sources */,
-				396163082709AF8200845785 /* testAudioMixViewController.swift in Sources */,
 				3912314C2707042100680DD2 /* ReadWriteDeleteFiles.swift in Sources */,
 				39007DA8270605830064D0AB /* AppDelegate.swift in Sources */,
 				39007DAA270605830064D0AB /* SceneDelegate.swift in Sources */,
