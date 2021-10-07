@@ -18,6 +18,7 @@
 		3912314C2707042100680DD2 /* ReadWriteDeleteFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3912314B2707042100680DD2 /* ReadWriteDeleteFiles.swift */; };
 		3989F8FE27072B50008EEEFB /* ReadMyIphoneDirectorysInfos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3989F8FD27072B50008EEEFB /* ReadMyIphoneDirectorysInfos.swift */; };
 		39A41432270C581200AFD345 /* TrimMergeAudioFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A41431270C581200AFD345 /* TrimMergeAudioFile.swift */; };
+		39BA8355270ECDB200627E3A /* AudioEditManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BA8354270ECDB200627E3A /* AudioEditManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		3912314B2707042100680DD2 /* ReadWriteDeleteFiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadWriteDeleteFiles.swift; sourceTree = "<group>"; };
 		3989F8FD27072B50008EEEFB /* ReadMyIphoneDirectorysInfos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadMyIphoneDirectorysInfos.swift; sourceTree = "<group>"; };
 		39A41431270C581200AFD345 /* TrimMergeAudioFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrimMergeAudioFile.swift; sourceTree = "<group>"; };
+		39BA8354270ECDB200627E3A /* AudioEditManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioEditManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 		39007DD92706070E0064D0AB /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				39BA8354270ECDB200627E3A /* AudioEditManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 				39007DAC270605830064D0AB /* ViewController.swift in Sources */,
 				3912314C2707042100680DD2 /* ReadWriteDeleteFiles.swift in Sources */,
 				39007DA8270605830064D0AB /* AppDelegate.swift in Sources */,
+				39BA8355270ECDB200627E3A /* AudioEditManager.swift in Sources */,
 				39007DAA270605830064D0AB /* SceneDelegate.swift in Sources */,
 				39A41432270C581200AFD345 /* TrimMergeAudioFile.swift in Sources */,
 			);
