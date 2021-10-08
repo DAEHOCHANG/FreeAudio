@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--fdsafasd-->
+        <!--홈-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController id="Y6W-OH-hqX" customClass="HomeViewController" customModule="FreeAudio" customModuleProvider="target" sceneMemberID="viewController">
@@ -21,13 +21,39 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hJ3-Se-grw">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
-                                        <color key="backgroundColor" systemColor="systemBrownColor"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="390"/>
+                                        <subviews>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="o4I-Ki-6l5">
+                                                <rect key="frame" x="0.0" y="30" width="414" height="150"/>
+                                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="150" id="rdy-wA-0Ig"/>
+                                                </constraints>
+                                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </tableView>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="HbZ-qh-rvo">
+                                                <rect key="frame" x="0.0" y="210" width="414" height="150"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="150" id="eZL-Pg-Mkt"/>
+                                                </constraints>
+                                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </tableView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" priority="250" constant="725" id="ybA-8R-Pq6"/>
+                                            <constraint firstItem="HbZ-qh-rvo" firstAttribute="width" secondItem="hJ3-Se-grw" secondAttribute="width" id="7sW-5N-at4"/>
+                                            <constraint firstAttribute="bottom" secondItem="HbZ-qh-rvo" secondAttribute="bottom" constant="30" id="ATC-aS-0FP"/>
+                                            <constraint firstItem="HbZ-qh-rvo" firstAttribute="centerX" secondItem="hJ3-Se-grw" secondAttribute="centerX" id="EzY-0e-jka"/>
+                                            <constraint firstItem="o4I-Ki-6l5" firstAttribute="centerX" secondItem="hJ3-Se-grw" secondAttribute="centerX" id="FMY-hV-kMp"/>
+                                            <constraint firstItem="o4I-Ki-6l5" firstAttribute="width" secondItem="hJ3-Se-grw" secondAttribute="width" id="krQ-db-OyP"/>
+                                            <constraint firstItem="o4I-Ki-6l5" firstAttribute="top" secondItem="hJ3-Se-grw" secondAttribute="top" constant="30" id="m7q-wY-JBU"/>
+                                            <constraint firstItem="HbZ-qh-rvo" firstAttribute="top" secondItem="o4I-Ki-6l5" secondAttribute="bottom" constant="30" id="y5R-3c-Qs1"/>
+                                            <constraint firstAttribute="height" priority="250" constant="700" id="ybA-8R-Pq6"/>
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" systemColor="quaternarySystemFillColor"/>
                                 <constraints>
                                     <constraint firstItem="hJ3-Se-grw" firstAttribute="bottom" secondItem="HVh-uw-t0Z" secondAttribute="bottom" id="Fmy-NA-GwN"/>
                                     <constraint firstItem="hJ3-Se-grw" firstAttribute="top" secondItem="HVh-uw-t0Z" secondAttribute="top" id="ZlO-jr-ug6"/>
@@ -48,7 +74,13 @@
                             <constraint firstItem="uJV-U0-Fgc" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="qku-31-QMa"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="fdsafasd" id="qOh-hd-FlL"/>
+                    <navigationItem key="navigationItem" title="홈" id="qOh-hd-FlL"/>
+                    <connections>
+                        <outlet property="finderTableView" destination="HbZ-qh-rvo" id="JdT-8Z-MFz"/>
+                        <outlet property="finderTableViewHeightConstraint" destination="eZL-Pg-Mkt" id="tgQ-O5-SVw"/>
+                        <outlet property="ringTunesTableView" destination="o4I-Ki-6l5" id="ebr-76-2dt"/>
+                        <outlet property="ringTunesTableViewHeightConstraint" destination="rdy-wA-0Ig" id="Uk9-Sg-dh4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -98,11 +130,14 @@
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
+        <systemColor name="quaternarySystemFillColor">
+            <color red="0.45490196078431372" green="0.45490196078431372" blue="0.50196078431372548" alpha="0.080000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemBrownColor">
-            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
