@@ -2,27 +2,57 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="abW-7R-vii">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--fdsafasd-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController id="Y6W-OH-hqX" customClass="HomeViewController" customModule="FreeAudio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uJV-U0-Fgc">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hJ3-Se-grw">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                                        <color key="backgroundColor" systemColor="systemBrownColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" priority="250" constant="725" id="ybA-8R-Pq6"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="hJ3-Se-grw" firstAttribute="bottom" secondItem="HVh-uw-t0Z" secondAttribute="bottom" id="Fmy-NA-GwN"/>
+                                    <constraint firstItem="hJ3-Se-grw" firstAttribute="top" secondItem="HVh-uw-t0Z" secondAttribute="top" id="ZlO-jr-ug6"/>
+                                    <constraint firstItem="hJ3-Se-grw" firstAttribute="width" secondItem="Sge-Jr-P1u" secondAttribute="width" id="hEQ-C5-2kt"/>
+                                    <constraint firstItem="hJ3-Se-grw" firstAttribute="trailing" secondItem="HVh-uw-t0Z" secondAttribute="trailing" id="owV-dB-cbe"/>
+                                    <constraint firstItem="hJ3-Se-grw" firstAttribute="leading" secondItem="HVh-uw-t0Z" secondAttribute="leading" id="v79-AJ-SNn"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="HVh-uw-t0Z"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="Sge-Jr-P1u"/>
+                            </scrollView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="uJV-U0-Fgc" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="A07-tO-Slx"/>
+                            <constraint firstItem="uJV-U0-Fgc" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="CxB-Rf-0nn"/>
+                            <constraint firstItem="uJV-U0-Fgc" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="E1P-BE-Qbp"/>
+                            <constraint firstItem="uJV-U0-Fgc" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="qku-31-QMa"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="homekit" catalog="system" id="pxp-yL-Ce8"/>
+                    <navigationItem key="navigationItem" title="fdsafasd" id="qOh-hd-FlL"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="587" y="125"/>
+            <point key="canvasLocation" x="869.56521739130437" y="124.55357142857142"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="fWh-lz-nq5">
@@ -30,22 +60,49 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="abW-7R-vii" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VBO-lP-tOG">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" systemColor="labelColor"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="viewControllers" id="5SD-kE-jb6"/>
+                        <segue destination="l3o-GM-4H0" kind="relationship" relationship="viewControllers" id="5SD-kE-jb6"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bvl-BT-7rv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-300" y="125"/>
+            <point key="canvasLocation" x="-472" y="125"/>
+        </scene>
+        <!--홈-->
+        <scene sceneID="vdq-4m-fYu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="l3o-GM-4H0" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="홈" image="house.fill" catalog="system" id="pxp-yL-Ce8"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ePJ-dI-58b">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="Shs-cy-ciL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Zy-uU-3Lw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="213" y="125"/>
         </scene>
     </scenes>
     <resources>
-        <image name="homekit" catalog="system" width="128" height="106"/>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
