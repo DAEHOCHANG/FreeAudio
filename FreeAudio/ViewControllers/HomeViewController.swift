@@ -13,7 +13,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var ringTunesTableViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var finderTableView: UITableView!
     @IBOutlet weak var finderTableViewHeightConstraint: NSLayoutConstraint!
-    
+    var curDir = readMyIphoneDirectorysInfos()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,8 +22,11 @@ class HomeViewController: UIViewController {
     }
     
     func tablesHeightSetting() {
-        ringTunesTableViewHeightConstraint.constant = 280
-        finderTableViewHeightConstraint.constant = 500
+        let numberOfFilesInCurDir = curDir.count
+        
+        ringTunesTableViewHeightConstraint.constant = 150
+        finderTableViewHeightConstraint.constant =
+        CGFloat(50 + 50 * (numberOfFilesInCurDir))
     }
     func tableSetting() {
         ringTunesTableView.delegate = self
@@ -45,9 +48,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let number:Int = {
             if tableView == ringTunesTableView {
-                return 1
+                return 2
             } else {
-                return 10
+                return curDir.count
             }
         }()
         return number
@@ -59,7 +62,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             if tableView == ringTunesTableView {
                 return "벨소리"
             } else {
-                return "나의 아이폰"
+                return curDir[indexPath.row]
             }
         }()
         if #available(iOS 14.0, *) {
@@ -98,6 +101,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         50
     }
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
+    }
     
 }
