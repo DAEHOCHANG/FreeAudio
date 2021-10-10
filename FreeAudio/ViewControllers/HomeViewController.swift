@@ -111,5 +111,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     //셀 클릭하는 순간 모달뷰가 나와야함
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewRingtoneDetailInfoViewController")
+        vc?.modalPresentationStyle = .pageSheet
+        present(vc!, animated: true, completion: {})
     }
 }

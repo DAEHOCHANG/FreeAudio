@@ -21,6 +21,7 @@
 		39BA8355270ECDB200627E3A /* AudioEditManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BA8354270ECDB200627E3A /* AudioEditManager.swift */; };
 		39BA8359270F30F100627E3A /* FreeAudioModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BA8358270F30F100627E3A /* FreeAudioModelTests.swift */; };
 		39BA835D270F3AA300627E3A /* HomeViewStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39BA835C270F3AA300627E3A /* HomeViewStoryboard.storyboard */; };
+		39F431562713025400EA4988 /* HomeViewRingtoneDetailInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F431552713025400EA4988 /* HomeViewRingtoneDetailInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		39BA8354270ECDB200627E3A /* AudioEditManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioEditManager.swift; sourceTree = "<group>"; };
 		39BA8358270F30F100627E3A /* FreeAudioModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeAudioModelTests.swift; sourceTree = "<group>"; };
 		39BA835C270F3AA300627E3A /* HomeViewStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = HomeViewStoryboard.storyboard; path = FreeAudioTests/HomeViewStoryboard.storyboard; sourceTree = SOURCE_ROOT; };
+		39F431552713025400EA4988 /* HomeViewRingtoneDetailInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewRingtoneDetailInfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				39007DAB270605830064D0AB /* HomeViewController.swift */,
+				39F431552713025400EA4988 /* HomeViewRingtoneDetailInfoViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3989F8FE27072B50008EEEFB /* ReadMyIphoneDirectorysInfos.swift in Sources */,
+				39F431562713025400EA4988 /* HomeViewRingtoneDetailInfoViewController.swift in Sources */,
 				39007DAC270605830064D0AB /* HomeViewController.swift in Sources */,
 				3912314C2707042100680DD2 /* ReadWriteDeleteFiles.swift in Sources */,
 				39007DA8270605830064D0AB /* AppDelegate.swift in Sources */,
