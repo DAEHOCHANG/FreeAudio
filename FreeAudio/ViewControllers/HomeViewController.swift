@@ -98,11 +98,18 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         return header
     }
     
+    //섹션 헤더 크기
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         50
     }
+    
+    //셀 크기
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
     }
     
+    //셀 클릭하는 순간 모달뷰가 나와야함
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+    }
 }
