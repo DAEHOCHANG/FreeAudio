@@ -16,7 +16,11 @@ func readMyIphoneDirectorysInfos() -> [String] {
     
     do {
         let fileList = try fileManager.contentsOfDirectory(atPath: documentsURL.path)
-        return fileList
+        let ret = fileList.filter{ val in
+            if val.hasPrefix(".") == true { return false }
+            else { return true }
+        }
+        return ret
     }catch let error as NSError {
         print("Error reading my iphone directory's infos error:\(error)")
     }

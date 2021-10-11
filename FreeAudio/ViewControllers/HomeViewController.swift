@@ -118,7 +118,7 @@ extension HomeViewController {
     func deleteAction(action:UIAlertAction) {
         let willDeleteIndexs = finderTableView.indexPathsForSelectedRows!
         for indexPath in willDeleteIndexs {
-            //deleteAudioFile(with: curDir[indexPath.row])
+            deleteAudioFile(with: curDir[indexPath.row])
             curDir[indexPath.row] = ""
         }
         curDir = curDir.filter { $0 != "" }

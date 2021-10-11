@@ -50,7 +50,7 @@ class HomeViewRingtoneDetailInfoViewController : UIViewController {
     }
     
     func deleteAction(action:UIAlertAction) {
-        //deleteAudioFile(with: audioFileName)
+        deleteAudioFile(with: audioFileName)
         dismiss(animated: true, completion: nil)
     }
     @IBAction func playButtonAction(_ sender: UIButton) {
