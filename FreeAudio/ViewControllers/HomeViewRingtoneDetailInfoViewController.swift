@@ -17,6 +17,7 @@ class HomeViewRingtoneDetailInfoViewController : UIViewController {
     var audioFileName: String = ""
     var audioAvasset: AVAsset?
     var isPlaying: Bool = false
+    var player = AVPlayer()
     override func viewDidLoad() {
         super.viewDidLoad()
         let bounds = UIScreen.main.bounds
@@ -24,10 +25,16 @@ class HomeViewRingtoneDetailInfoViewController : UIViewController {
         modalView.layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner]
         modalView.layer.cornerRadius = deviceWidth / 9.71209
         audioFileNameLabel.text = audioFileName
+        try! AVAudioSession.sharedInstance().setCategory(.playback)
+        let item = AVPlayerItem(asset: audioAvasset!)
+        player.replaceCurrentItem(with: item)
     }
     @IBAction func shareButtonAction(_ sender: Any) {
         
-        
+        guard let fileURL = readAudioFileURL(with: audioFileName) else {return}
+        let acVc = UIActivityViewController(activityItems: [fileURL], applicationActivities: nil)
+        acVc.popoverPresentationController?.sourceView = self.view
+        self.present(acVc, animated: true, completion: nil)
     }
     @IBAction func deleteButtonAction(_ sender: Any) {
         let alert = UIAlertController(title: "정말 삭제하시겠습니까?", message: "한번 삭제하면 되돌리지 못합니다.", preferredStyle: .alert)
@@ -50,8 +57,10 @@ class HomeViewRingtoneDetailInfoViewController : UIViewController {
         isPlaying.toggle()
         if isPlaying == true {
             sender.setImage(UIImage(systemName: "pause.fill"), for: .normal)
+            player.play()
         } else {
             sender.setImage(UIImage(systemName: "play.fill"), for: .normal)
+            player.pause()
         }
     }
 }

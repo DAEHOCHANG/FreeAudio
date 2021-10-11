@@ -90,7 +90,16 @@ extension HomeViewController {
         present(alert, animated: true, completion: nil)
     }
     @objc func shareButtonAction(sender:UIBarButtonItem) {
-        
+        guard let willSharedFileIndexs = finderTableView.indexPathsForSelectedRows else {return}
+        var urls:[URL] = []
+        for indexPath in willSharedFileIndexs {
+            guard let fileURL = readAudioFileURL(with: curDir[indexPath.row]) else {return}
+            urls.append(fileURL)
+        }
+
+        let acVc = UIActivityViewController(activityItems: urls, applicationActivities: nil)
+        acVc.popoverPresentationController?.sourceView = self.view
+        self.present(acVc, animated: true, completion: nil)
     }
     @objc func exportRingtoneButtonAction(sender:UIBarButtonItem) {
         let alert = UIAlertController(title: "준비중인 기능입니다.", message: "감사합니다..", preferredStyle: .alert)

@@ -75,14 +75,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="벨소리 모음" id="qOh-hd-FlL">
-                        <rightBarButtonItems>
-                            <barButtonItem title="편집" id="6wj-ys-Ln6">
-                                <connections>
-                                    <action selector="editButtonActionWithSender:" destination="Y6W-OH-hqX" id="PwY-o5-Yb3"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem image="folder.badge.plus" catalog="system" id="hPy-Ml-XTT"/>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" title="편집" id="6wj-ys-Ln6">
+                            <connections>
+                                <action selector="editButtonActionWithSender:" destination="Y6W-OH-hqX" id="PwY-o5-Yb3"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="finderTableView" destination="HbZ-qh-rvo" id="JdT-8Z-MFz"/>
@@ -287,7 +284,6 @@
     </scenes>
     <resources>
         <image name="alarm" catalog="system" width="124" height="128"/>
-        <image name="folder.badge.plus" catalog="system" width="128" height="91"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="play.fill" catalog="system" width="116" height="128"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
