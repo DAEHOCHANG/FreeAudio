@@ -22,6 +22,17 @@ func readAudioFile(with name:String) -> AVAsset? {
     }
 }
 
+func readAudioFileURL(with name: String) -> URL? {
+    let fileManager = FileManager.default
+    let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
+    let filePath = documentsURL.appendingPathComponent(name)
+    if fileManager.fileExists(atPath: filePath.path) == false {
+        return nil
+    } else {
+        return filePath
+    }
+}
+
 /**
  [수정]
  나의 아이폰 디렉토리에 name(파일 형식자 포함) 이름의 파일을 저장합니다.
