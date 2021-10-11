@@ -17,13 +17,18 @@ class HomeViewController: UIViewController {
     var prevBarItems:[UIBarButtonItem] = []
     var multipleSelectMode:Bool = false
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableSetting()
         tablesHeightSetting()
         barButtonItemSetting()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        curDir = readMyIphoneDirectorysInfos()
+    }
+    
     func barButtonItemSetting() {
         let prevBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrow.right"), style: .plain, target: self, action: #selector(prevButtonAction(sender:)))
         let deleteBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "trash"), style: .plain, target: self, action: #selector(deleteButtonAction(sender:)))
@@ -31,6 +36,7 @@ class HomeViewController: UIViewController {
         let exportRingtoneBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "alarm"), style: .plain, target: self, action: #selector(exportRingtoneButtonAction(sender:)))
         prevBarItems = [prevBarButtonItem,exportRingtoneBarButtonItem,deleteBarButtonItem,shareBarButtonItem]
     }
+    
     func tablesHeightSetting() {
         let numberOfFilesInCurDir = curDir.count
         
@@ -38,6 +44,7 @@ class HomeViewController: UIViewController {
         finderTableViewHeightConstraint.constant =
         CGFloat(50 + 50 * (numberOfFilesInCurDir))
     }
+    
     func tableSetting() {
         ringTunesTableView.delegate = self
         ringTunesTableView.dataSource = self
@@ -66,19 +73,18 @@ extension HomeViewController {
         changeBarButtonItems()
         finderTableView.allowsMultipleSelection = true
         multipleSelectMode = true
-        
     }
     @objc func prevButtonAction(sender:UIBarButtonItem) {
         changeBarButtonItems()
         finderTableView.allowsMultipleSelection = false
         multipleSelectMode = false
-        
     }
     @objc func deleteButtonAction(sender:UIBarButtonItem) {
-        print(finderTableView.indexPathsForSelectedRows)
+        if finderTableView.indexPathsForSelectedRows == nil ||
+            finderTableView.indexPathsForSelectedRows == [] { return }
         let alert = UIAlertController(title: "정말 삭제하시겠습니까?", message: "한번 삭제하면 되돌리지 못합니다.", preferredStyle: .alert)
         let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
-        let delete = UIAlertAction(title: "삭제", style: .destructive, handler: nil)
+        let delete = UIAlertAction(title: "삭제", style: .destructive, handler: deleteAction(action:))
         alert.addAction(cancel)
         alert.addAction(delete)
         present(alert, animated: true, completion: nil)
@@ -99,6 +105,15 @@ extension HomeViewController {
         guard let tmp = self.navigationController?.navigationBar.items?[0].rightBarButtonItems else {return}
         self.navigationController?.navigationBar.topItem?.setRightBarButtonItems(prevBarItems, animated: true)
         prevBarItems = tmp
+    }
+    func deleteAction(action:UIAlertAction) {
+        let willDeleteIndexs = finderTableView.indexPathsForSelectedRows!
+        for indexPath in willDeleteIndexs {
+            //deleteAudioFile(with: curDir[indexPath.row])
+            curDir[indexPath.row] = ""
+        }
+        curDir = curDir.filter { $0 != "" }
+        finderTableView.deleteRows(at: willDeleteIndexs, with: .fade)
     }
 }
 
