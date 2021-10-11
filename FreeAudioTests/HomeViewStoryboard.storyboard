@@ -164,6 +164,9 @@
                                                 </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="play.fill" catalog="system"/>
+                                                <connections>
+                                                    <action selector="playButtonAction:" destination="Lbg-Ee-BG0" eventType="touchUpInside" id="iT4-br-7NU"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -272,7 +275,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="audioFileNameLabel" destination="Lcf-0U-eoL" id="03V-Gq-rqX"/>
                         <outlet property="modalView" destination="jmZ-gJ-krJ" id="Gfo-r0-XfI"/>
+                        <outlet property="playStopButton" destination="0aX-uD-7Hg" id="2w1-gb-9zB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zzq-hA-aSy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

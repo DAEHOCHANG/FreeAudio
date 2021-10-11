@@ -12,16 +12,21 @@ import AVFoundation
 class HomeViewRingtoneDetailInfoViewController : UIViewController {
     
     @IBOutlet weak var modalView: UIView!
-    var audioFileName:String = ""
-    var audioAvasset:AVAsset?
+    @IBOutlet weak var audioFileNameLabel: UILabel!
+    @IBOutlet weak var playStopButton: UIStackView!
+    var audioFileName: String = ""
+    var audioAvasset: AVAsset?
+    var isPlaying: Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
         let bounds = UIScreen.main.bounds
         let deviceWidth = bounds.width
         modalView.layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner]
         modalView.layer.cornerRadius = deviceWidth / 9.71209
+        audioFileNameLabel.text = audioFileName
     }
     @IBAction func shareButtonAction(_ sender: Any) {
+        
         
     }
     @IBAction func deleteButtonAction(_ sender: Any) {
@@ -40,5 +45,13 @@ class HomeViewRingtoneDetailInfoViewController : UIViewController {
     func deleteAction(action:UIAlertAction) {
         //deleteAudioFile(with: audioFileName)
         dismiss(animated: true, completion: nil)
+    }
+    @IBAction func playButtonAction(_ sender: UIButton) {
+        isPlaying.toggle()
+        if isPlaying == true {
+            sender.setImage(UIImage(systemName: "pause.fill"), for: .normal)
+        } else {
+            sender.setImage(UIImage(systemName: "play.fill"), for: .normal)
+        }
     }
 }
