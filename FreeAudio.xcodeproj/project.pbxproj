@@ -18,6 +18,7 @@
 		3912314C2707042100680DD2 /* ReadWriteDeleteFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3912314B2707042100680DD2 /* ReadWriteDeleteFiles.swift */; };
 		3989F8FE27072B50008EEEFB /* ReadMyIphoneDirectorysInfos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3989F8FD27072B50008EEEFB /* ReadMyIphoneDirectorysInfos.swift */; };
 		39A41432270C581200AFD345 /* TrimMergeAudioFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A41431270C581200AFD345 /* TrimMergeAudioFile.swift */; };
+		39A522FE27158DE400FACD3B /* WaveFormAudioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A522FD27158DE400FACD3B /* WaveFormAudioView.swift */; };
 		39BA8355270ECDB200627E3A /* AudioEditManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BA8354270ECDB200627E3A /* AudioEditManager.swift */; };
 		39BA8359270F30F100627E3A /* FreeAudioModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BA8358270F30F100627E3A /* FreeAudioModelTests.swift */; };
 		39BA835D270F3AA300627E3A /* HomeViewStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39BA835C270F3AA300627E3A /* HomeViewStoryboard.storyboard */; };
@@ -57,6 +58,7 @@
 		3912314B2707042100680DD2 /* ReadWriteDeleteFiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadWriteDeleteFiles.swift; sourceTree = "<group>"; };
 		3989F8FD27072B50008EEEFB /* ReadMyIphoneDirectorysInfos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadMyIphoneDirectorysInfos.swift; sourceTree = "<group>"; };
 		39A41431270C581200AFD345 /* TrimMergeAudioFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrimMergeAudioFile.swift; sourceTree = "<group>"; };
+		39A522FD27158DE400FACD3B /* WaveFormAudioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveFormAudioView.swift; sourceTree = "<group>"; };
 		39BA8354270ECDB200627E3A /* AudioEditManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioEditManager.swift; sourceTree = "<group>"; };
 		39BA8358270F30F100627E3A /* FreeAudioModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeAudioModelTests.swift; sourceTree = "<group>"; };
 		39BA835C270F3AA300627E3A /* HomeViewStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = HomeViewStoryboard.storyboard; path = FreeAudioTests/HomeViewStoryboard.storyboard; sourceTree = SOURCE_ROOT; };
@@ -181,6 +183,7 @@
 		39D14D9D270FECFF0034B9A6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				39A522FD27158DE400FACD3B /* WaveFormAudioView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 			files = (
 				3989F8FE27072B50008EEEFB /* ReadMyIphoneDirectorysInfos.swift in Sources */,
 				39F431562713025400EA4988 /* HomeViewRingtoneDetailInfoViewController.swift in Sources */,
+				39A522FE27158DE400FACD3B /* WaveFormAudioView.swift in Sources */,
 				39007DAC270605830064D0AB /* HomeViewController.swift in Sources */,
 				3912314C2707042100680DD2 /* ReadWriteDeleteFiles.swift in Sources */,
 				39007DA8270605830064D0AB /* AppDelegate.swift in Sources */,
